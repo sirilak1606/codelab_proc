@@ -14,15 +14,34 @@ $(document).ready(function () {
         } 
       })
     });
+    $('#btnSendMsg').click( function(){
+      // url from where we want to get the data
+       console.log("SendMsg");
+  
+       data_input = { "msg": $('#txtMessage').val(), "name": $('#txtName').val()};
+  
+       socket.emit('joidRoom', data_input, function (data) {
+              console.log('sent message to server!');
+              console.log(data);
+              //
+              Swal.fire({
+                  title: 'ขอบคุณที่บอกฉัน',
+                  text: data,
+              })
+        });
+  
+    });
+  
   });
   
   function AppendData(val){
     $("#listUser").append('<a href="#" class="list-group-item list-group-item-action"> Random : '+ val +'</a>');
   }
-
+  
 // $(document).ready(function () {
 //     console.log("Onload");
 //     console.log("Django Project is Work");
 //   // Insert code here
 
 //  });
+

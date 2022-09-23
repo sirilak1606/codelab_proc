@@ -39,7 +39,20 @@ io.on("connection", (socket) => {
   }, 3000);
 
   //Work exercise ,Insert code here
-
+  socket.on('joidRoom', (data, callback) => {
+    console.log('joidRoom', data);
+  
+    var args={'msg':data.msg,'name':data.name};
+    const paraphase = ['"'+args.msg+'"'+'\nไม่บ่นสิคะคุณ'+args.name+' \nเราไปเดทกันมั้ย '
+    , '\nฉันได้ฟังเรื่องราวของคุณมามากมายแล้ว  \n มะพร้าวมาก'
+    , '\nปรึกษาอาจารย์ยังคะ คิดกับฉันอย่างนี้'
+    ,'อยากเป็นเฮอร์ไมโอนี่ จะเสกให้พี่มารักแต่หนู จะทำให้พี่ได้รู้ ว่ารักกับหนูจะฟินไม่ไหว... '];
+  
+    ranIndex = Math.floor(Math.random() * ((paraphase.length-1) - 0 + 1) + 0);
+    console.log('index', ranIndex);
+  
+    callback(paraphase[ranIndex]);
+  });
 
 });
 

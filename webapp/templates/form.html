@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Typography</title>
+            <link href="css/bootstrap.min.css" rel="stylesheet">
+            <script src="js/bootstrap.min.js"></script>
+        </head>
+        <body>
+            <div class="container" style="margin-top: 20px;">
+                <h1>โปรดส่งใครมาช่วยฉันที</h1>
+                <p>ส่งเรื่องราวของคุณมา แล้วเราจะติดต่อกลับไป</p>
+                <input type="text" size="60" id="txtMessage" placeholder="ข้อความที่จะฝากไว้ให้เธอ"/> <p></p>
+                <input type="text" size="60" id="txtName" placeholder="บอกชื่อเธอกับฉัน"/> <p></p>
+                <button class="btn btn-primary" id="btnSendMsg" onclick="SendMsg()">ส่ง</button>
+
+
+            </div>
+        </body>
+        </html>    
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<form action="" method="get">
+    <input type="text" class="form-control" placeholder="ข้อความที่จะฝากไว้ให้เธอ"/> <br/>
+    <input type="text" class="form-control" placeholder="บอกชื่อเธอกับฉัน"/> <br/>
+    <input type="text" size="50" id="txtName" name="txtName" placeholder="บอกชื่อเธอกับฉัน"> <br/>
+    <input type="submit" value="ส่ง" class="btn btn-primary">
+    <button class="button-1" id="btnSendMsg" onclick="SendMsg()">ส่ง</button>
+    
+
+</form> -->
